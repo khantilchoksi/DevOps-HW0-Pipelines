@@ -57,7 +57,7 @@
         config.vm.provision "shell", inline: <<-SHELL
           apt-get update
           apt-get install -y node
-         apt-get install -y nodejs-legacy
+          apt-get install -y nodejs-legacy
         SHELL   
         ```   
      3. Start up the virtual machine.  
@@ -87,14 +87,31 @@ open https://android.com
  6. Now, whenever, we commit something to this repo, the `post-commit` hooks file will be executed.  
 
  * **Simple Pipeline:**   
+  * Here is my [post-receive file](/Pipeline/post-receive).  
   * Here is the [screencast](https://youtu.be/SrlqOcZf6qE) demonstrating the simple pipelines.    
-  * The following steps are done in order to perform the above task:  
-  
-**Screencast:**
+  * The following steps are done in order to perform the above task: 
+   1. `App` directory contains the cloned repo; which is basically your development directory. 
+   2. Create an endpoint for our deployment, by creating the following directory structure.  
+   ```
+   deploy/
+     production.git/  
+     production-www/  
+   ```  
+   3. A `bare` git repository is created under `production.git`, that will always have files that reflect the most current state of the repo.  
+   `deploy/production-www/ :> git init --bare`  
+   4. A `post-receive` hook file has been created at `production.git/hooks`.  It includes the commands to checkout to the production directory, and then install nodejs and starting the server. Also, provide the `post-receive` executable permissions.
+   ```
+   #!/bin/sh
+   GIT_WORK_TREE=deploy/production-www/ git checkout -f
+   echo "Pushed to production"
+   cd /deploy/production-www/
+   npm install
+   node main.js 9090  
+   ```  
+   5. Now, set the remote production to App repository.   
+   `git remote add prod file://deploy/production.git`  
+   6. Then, after any commit, pushing the changes to the production directory's master branch:   
+   `git push prod master`  
+   7. You can see the changes reflected in `production-www`, i.e. your production environment.  
 
-
-
-
-**Thank you for taking your valuable time and I hope that I had put my all efforts to understand the concepts of HW0.**
-
-
+**Thank you!**
