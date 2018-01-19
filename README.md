@@ -7,8 +7,8 @@
 
 * **Slack Profile:** ![img](/SlackProfile.png)
 
-## Computing Environment:
-  ### **Using Baker:**    
+## Computing Environment:  
+  ### Using Baker:   
    * Here is my [baker.yml file](/ComputingEnvironment/baker.yml).     
    * Here is the [screencast](https://youtu.be/g_Pa-OYKTzw) demonstrating the creation of Virtual Machine, installing the NodeJS in it and synced folder.  
    * The following steps are to be done in order to perform the above task:  
@@ -114,4 +114,4 @@ open https://android.com
    `git push prod master`  
    7. You can see the changes reflected in `production-www`, i.e. your production environment.  
 
-**Thank you!**
+**Thank you!**  
