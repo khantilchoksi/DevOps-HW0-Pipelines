@@ -1,0 +1,6 @@
+---
+name: baker-computing
+vm:
+  ip: 192.168.22.19
+lang:
+  - nodejs9
