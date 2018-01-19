@@ -8,7 +8,7 @@
 * **Slack Profile:** ![img](/SlackProfile.png)
 
 ## Computing Environment:
-  * **Using Baker:**    
+  ### **Using Baker:**    
    * Here is my [baker.yml file](/ComputingEnvironment/baker.yml).     
    * Here is the [screencast](https://youtu.be/g_Pa-OYKTzw) demonstrating the creation of Virtual Machine, installing the NodeJS in it and synced folder.  
    * The following steps are to be done in order to perform the above task:  
@@ -34,7 +34,7 @@
        6. The directory where `baker.yml` is placed in local machine, becomes the synced folder in the VM.   
       
       
-* **Using Vagrant:**  
+### **Using Vagrant:**  
  * Here is my [Vagrantfile](/ComputingEnvironment/Vagrantfile).     
  * Here is the [screencast](https://youtu.be/EfQ_dzlBBmQ) demonstrating the creation of Virtual Machine, installing the NodeJS in it and synced folder.  
  * The following steps are done in order to perform the above task:  
@@ -66,7 +66,7 @@
      `vagrant ssh`  
 
 ## Pipeline  
- * **Hooks:**   
+ ### **Hooks:**   
   * Here is my [post-commit file](/Hooks/post-commit).     
   * Here is the [screencast](https://youtu.be/jqxHrFAYi4M) demonstrating the hooks.    
   * The following steps are done in order to perform the above task:  
@@ -86,7 +86,7 @@ open https://android.com
  `chmod u+x post-commit`     
  6. Now, whenever, we commit something to this repo, the `post-commit` hooks file will be executed.  
 
- * **Simple Pipeline:**   
+ ### **Simple Pipeline:**   
   * Here is my [post-receive file](/Pipeline/post-receive).  
   * Here is the [screencast](https://youtu.be/SrlqOcZf6qE) demonstrating the simple pipelines.    
   * The following steps are done in order to perform the above task: 
