@@ -8,14 +8,47 @@
 * **Slack Profile:** ![img](/SlackProfile.png)
 
 ## Computing Environment:
-  * Using Baker:  
+  * **Using Baker:**    
+   * Here is my [baker.yml file](/ComputingEnvironment/baker.yml).     
+   * Here is the [screencast](https://youtu.be/g_Pa-OYKTzw) demonstrating the creation of Virtual Machine, installing the NodeJS in it and synced folder.  
+   * The following steps are to be done in order to perform the above task:  
+      1. Install the Baker using homebrew.
+       `brew install ottomatica/ottomatica/baker` 
+      2. Setup the baker sever, to manage the Baker environments in machine.  
+       `baker setup`  
+      3. Create a simple Baker file that creates a VM at a given IP address and also install nodejs in your VM.  
   
-    
-  * Using Vagrant
+       ```
+            #baker.yml
+            ---
+            name: baker-computing   
+             vm:  
+              ip: 192.168.22.19  
+             lang:   
+               - nodejs9  
+       ```      
+       4. To Bake the virtual machine called `baker-computing`, the bake2 command is used with the `baker.yml` file path.   
+        `baker bake2 --local`   
+       5. After Baker finishes creating the VM, ssh to VM using `ssh` command.    
+        `baker ssh baker-computing`  
+       6. The directory where `baker.yml` is placed in local machine, becomes the synced folder in the VM.   
+      
+      
+* **Using Vagrant:**  
+  * Here is my [Vagrantfile](/ComputingEnvironment/Vagrantfile).     
+  * Here is the [screencast]() demonstrating the creation of Virtual Machine, installing the NodeJS in it and synced folder.  
+  * The following steps are to be done in order to perform the above task:  
+      1. Install the Baker using homebrew.
+       `brew install ottomatica/ottomatica/baker` 
+      2. Setup the baker sever, to manage the Baker environments in machine.  
+       `baker setup`  
+      3. Create a simple Baker file that creates a VM at a given IP address and also install nodejs in your VM.
 
 ## Hook Script:
-`#!/bin/bash`  
-`open https://android.com`
+```
+#!/bin/bash
+open https://android.com
+```
 
 *I have done the following steps to implement the hookscript.*
 
